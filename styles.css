@@ -29,9 +29,18 @@ html {
 }
 
 #logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #f1c40f; /* 골드 텍스트 색상 */
+}
+
+#logo a {
+  color: inherit; /* 부모 요소의 색상을 상속받도록 설정 */
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+}
+
+#logo a:hover {
+  color: #f1c40f; /* 호버 시 색상 유지 */
 }
 
 #menu-icon {
@@ -113,7 +122,7 @@ html {
 
 #welcome-message {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -238,4 +247,12 @@ ul {
 
 .github-link:hover {
   color: #2c3e50;
+}
+
+footer {
+  text-align: center;
+  padding: 5px 0; /* 상하 패딩을 줄여 푸터 영역을 줄임 */
+  background-color: #ecf0f1;
+  color: #8e9595;
+  font-size: 0.1rem; /* 폰트 크기를 작게 설정 */
 }
