@@ -1,0 +1,212 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #ecf0f1; /* 라이트 그레이 배경 설정 */
+  color: #2c3e50; /* 네이비 블루 텍스트 색상 */
+  overflow-x: hidden; /* 수평 스크롤 방지 */
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(
+    44,
+    62,
+    80,
+    0.8
+  ); /* 네이비 블루로 네비게이션 바 설정 */
+  z-index: 100;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f1c40f; /* 골드 텍스트 색상 */
+}
+
+#menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  cursor: pointer;
+}
+
+#nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+#nav-links li {
+  margin: 0;
+}
+
+#nav-links a {
+  color: #ecf0f1; /* 라이트 그레이 텍스트 색상 */
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+#nav-links a:hover {
+  color: #f1c40f;
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(44, 62, 80, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links li {
+    margin: 10px 0;
+  }
+}
+
+#home {
+  height: 100vh; /* 전체 화면을 차지 */
+  position: relative;
+  background-color: #2c3e50; /* 네이비 블루 배경 */
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #2c3e50; /* 네이비 블루 배경 */
+}
+
+#welcome-message {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: #ffffff; /* 화이트 텍스트 */
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  background-color: rgba(44, 62, 80, 0.8); /* 네이비 블루 배경 강조 */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#welcome-message h1 {
+  font-size: 3rem; /* 폰트 크기를 크게 설정 */
+  font-weight: 700; /* 폰트를 굵게 설정 */
+  color: #ffffff; /* 화이트 텍스트 */
+  margin-bottom: 20px; /* 하단 여백 추가 */
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#social-links a {
+  font-size: 1.5rem;
+  color: #00d1ff; /* 포인트 색상 */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#social-links a:hover {
+  color: #ffffff; /* 호버 시 화이트 색상으로 변경 */
+}
+
+#social-links i {
+  margin-right: 8px;
+}
+
+section {
+  padding: 100px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff; /* 화이트 배경 */
+  color: #2c3e50; /* 네이비 블루 텍스트 */
+  border-radius: 10px; /* 모서리 둥글게 처리 */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p,
+ul {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* 스크롤 시 섹션 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  opacity: 0; /* 애니메이션 시작 전에는 요소가 보이지 않음 */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.about-content {
+  background-color: #f8f9fa; /* 살짝 밝은 배경 색상 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #2c3e50; /* 네이비 블루 텍스트 색상 */
+}
+
+.about-content .emoji {
+  font-size: 1.5rem;
+  margin-right: 10px; /* 이모지와 텍스트 사이 간격 */
+}
