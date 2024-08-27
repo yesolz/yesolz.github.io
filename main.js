@@ -1,6 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Document Loaded"); // 추가
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("show");
+}
 
+document.querySelectorAll("#navbar a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    targetElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const text = "Hello!\nI'm Yaesol Choi";
   const typingSpeed = 100; // 타이핑 속도 (밀리초 단위)
   let index = 0;
@@ -19,20 +36,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   type();
-
-  // 스크롤 애니메이션을 위한 코드 추가
-  const animatedElements = document.querySelectorAll(".animate");
-
-  function checkVisibility() {
-    animatedElements.forEach((element) => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        element.classList.add("visible");
-        console.log("Element visible", element); // 추가
-      }
-    });
-  }
-
-  window.addEventListener("scroll", checkVisibility);
-  checkVisibility(); // 페이지 로드 시 가시성을 체크
 });
