@@ -1,1 +1,0 @@
-# yesolz.github.io
